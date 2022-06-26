@@ -275,3 +275,20 @@ def calculate_results(y_true, y_pred):
                   "recall": model_recall,
                   "f1": model_f1}
   return model_results
+
+# Function to evaluate: acc, prec, recall, f1-score
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+
+def calculate_results(y_true, y_pred):
+  """
+  Calculates model accuracy, precision, recall, and F1 score of a binary classification model
+  """
+  # Calculate model accuracy
+  model_accuracy = accuracy_score(y_true, y_pred) * 100
+  # Calculate model precision, recall, and f1-score using weighted average
+  model_precision, model_recall, model_f1, _ = precision_recall_fscore_support(y_true, y_pred, average="weighted")
+  model_reults = {"accuracy": model_accuracy,
+                  "precision": model_precision,
+                  "recall": model_recall,
+                  "f1": model_f1}
+  return model_results
