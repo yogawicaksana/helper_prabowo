@@ -295,6 +295,8 @@ def calculate_results(y_true, y_pred):
 
 
 # =========================TEXT PREPROCESSING===========================
+import regex as re
+
 # remove hashtags
 def hashtags(text):
   hash = re.findall(r"#(\w+)", text)
