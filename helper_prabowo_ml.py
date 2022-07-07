@@ -296,7 +296,7 @@ def calculate_results(y_true, y_pred):
 
 # =========================TEXT PREPROCESSING===========================
 
-from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
+# from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
 import re
 import nltk
 nltk.download('stopwords')
@@ -309,13 +309,13 @@ def hashtags(text):
   return hash
 
 # translate emoji
-def emoji(text):
-  for emot in UNICODE_EMOJI:
-    if text == None:
-      text = text
-    else:
-      text = text.replace(emot, "_".join(UNICODE_EMOJI[emot].replace(",", "").replace(":", "").split()))
-    return text
+# def emoji(text):
+#   for emot in UNICODE_EMOJI:
+#     if text == None:
+#       text = text
+#     else:
+#       text = text.replace(emot, "_".join(UNICODE_EMOJI[emot].replace(",", "").replace(":", "").split()))
+#     return text
 
 # remove retweet username and tweeted at @username
 def remove_users(tweet):
