@@ -295,7 +295,13 @@ def calculate_results(y_true, y_pred):
 
 
 # =========================TEXT PREPROCESSING===========================
+!pip install emot
+from emot.emo_unicode import UNICODE_EMOJI, EMOTICONS_EMO
 import re
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+from nltk.tokenize import RegexpTokenizer
 
 # remove hashtags
 def hashtags(text):
